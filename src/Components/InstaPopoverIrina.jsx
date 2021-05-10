@@ -48,7 +48,7 @@ function InstaPopoverIrina() {
         >
           <Typography className={classes.typography}>
             <a href="https://instagram.com/zagrebina_cosmetics" title="">
-               Инстаграм продавца
+               Ирина Загребина
             </a>
           </Typography>
         </Popover>

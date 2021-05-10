@@ -48,7 +48,7 @@ function InstaPopoverShop() {
         >
           <Typography className={classes.typography}>
             <a href="https://instagram.com/onmacabim.krg" title="">
-               Инстаграм магазина
+               Мы в Инстаграм
             </a>
           </Typography>
         </Popover>

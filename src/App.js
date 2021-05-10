@@ -32,9 +32,9 @@ import ThreeDRotation from '@material-ui/icons/ThreeDRotation';
 import Icon from '@material-ui/core/Icon';
 import PhoneCallbackIcon from '@material-ui/icons/PhoneCallback';
 
-import ClassNames from '../src/Components/ClassNames';
-
-
+import Good from '../src/Components/Good';
+import VideoCard from '../src/Components/VideoCard';
+import BlogPost from '../src/Components/BlogPost';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,12 +65,18 @@ const useStyles = makeStyles((theme) => ({
   mainFeaturesPostContent: {
     position: "relative",
     padding: theme.spacing(6),
-    marginTop: theme.spacing(6)
+    marginTop: theme.spacing(6),
+    color: theme.palette.common.white,
+    fontWeight: 'bold',
+    fontSize: 50,
+    backgroundColor: 'gray',
+    backgroundColor: "rgba(0, 0, 0, 0.1)"
   },
   cardMedia: {
-    height: 50,
-    paddingTop: "90.25%"
+    //height: 50,
+    //paddingTop: "90.25%"
   },
+  
   cardContent: {
     flexGrow: 1
   },
@@ -79,10 +85,19 @@ const useStyles = makeStyles((theme) => ({
   },
   typography: {
     padding: theme.spacing(2),
+  },
+  contacts: {
+    fontSize: 20,
+    fontWeight: 'bold'
   }
 }));
 
 const cards = [1, 2, 3];
+
+const img1 = "/images/1.jpeg";
+const img2 = "/images/2.jpeg";
+const img3 = "/images/3.jpg";
+const img4 = "/images/4.png";
 
 function App() {
 
@@ -106,12 +121,9 @@ function App() {
     <AppBar color='' position='fixed'>
       <Container fixed>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h4" className={classes.title}>
           
-            ONmacabim - магазин профессиональной космецевтики
+            ONmacabim
           
           </Typography>
           <Box>
@@ -120,11 +132,9 @@ function App() {
               Login
               </Button>
               */}
-
               
-              <Button>
-                <InstaPopoverShop />
-              </Button>
+          
+              <span className={classes.contacts}>Обучение косметологов в Караганде:</span>
 
               <Button>
                 <InstaPopoverIrina />
@@ -214,21 +224,12 @@ function App() {
         <Container fixed>
           <div className={classes.overlay} />
           <Grid container>
-            <Grid item md={6}>
+            <Grid item md={6} lg={6}>
               <div className={classes.mainFeaturesPostContent}>
-                <Typography component="h1"
-                  variant="h3"
-                  color="inherit"
-                  gutterBottom>
-                  Магазин профессиональной космецевтики ONmacabim
+                <Typography className={classes.mainFeaturesPostContent}>
+                  Профессиональная космецевтика ONmacabim
                 </Typography>
 
-                <Typography component="h5"
-                  variant="h5"
-                  color="inherit"
-                  paragraph>
-                  
-                </Typography>
                 {/*
                 <Button className={classes.menuButton} variant="contained" color="default" onClick={handleClickOpen}>
                   Контакты
@@ -251,7 +252,17 @@ function App() {
           </Grid>
         </Container>
       </Paper>
+
+
+
       <div className={classes.mainContent}>
+      <Container className={classes.cardGrid} maxWidth="lg">
+      <Grid container spacing={2}>
+      <BlogPost/>
+      <BlogPost/>
+      </Grid>
+      </Container>
+
         <Container maxWidth="md">
           <Typography
             variant="h3"
@@ -355,19 +366,31 @@ function App() {
       </Container>
 */}
 
-<Container className={classes.cardGrid} maxWidth="md">
+    <Container className={classes.cardGrid} maxWidth="lg">
         <Grid container spacing={4}>
-        <ClassNames />
-        <ClassNames />
-        <ClassNames />
-        <ClassNames />
-        <ClassNames />
-        <ClassNames />
-        <ClassNames />
-        <ClassNames />
-        <ClassNames />
+        <Good img={img1}/>
+        <Good img={img2}/>
+        <Good img={img3}/>
+        <Good img={img4}/>
         </Grid>
       </Container>
+      
+      <Container className={classes.cardGrid} maxWidth="md">
+        <Grid container spacing={4}>
+        <VideoCard />
+        <VideoCard />
+        </Grid>
+      </Container>
+
+      <Container className={classes.cardGrid} maxWidth="lg">
+        <Grid container spacing={4}>
+        <Good img={img1}/>
+        <Good img={img2}/>
+        <Good img={img3}/>
+        <Good img={img4}/>
+        </Grid>
+      </Container>
+
     </main>
     <footer>
       {/*

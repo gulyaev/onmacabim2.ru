@@ -53,7 +53,7 @@ function WhatsappPopover() {
         >
           <Typography className={classes.typography}>
             <a href="whatsapp://send/?phone=77013562776" title="WhatsApp: 77013562776">
-              Написать в ватсап
+              Задать вопрос в Whatsapp
             </a>
           </Typography>
         </Popover>
