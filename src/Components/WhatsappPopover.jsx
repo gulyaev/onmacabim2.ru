@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
     typography: {
       padding: theme.spacing(2),
     },
+    button: {
+      color: `#388e3c`,
+    }
   }));
 
 function WhatsappPopover() {
@@ -34,7 +37,7 @@ function WhatsappPopover() {
   
     return (
       <div>
-        <Button aria-describedby={id} variant="contained" color="" onClick={handleClick}>
+        <Button className={classes.button} aria-describedby={id} variant="contained" color="" onClick={handleClick}>
           <WhatsAppIcon/>
         </Button>
         <Popover
@@ -53,7 +56,7 @@ function WhatsappPopover() {
         >
           <Typography className={classes.typography}>
             <a href="whatsapp://send/?phone=77013562776" title="WhatsApp: 77013562776">
-              Задать вопрос в Whatsapp
+              Написать в Whatsapp
             </a>
           </Typography>
         </Popover>

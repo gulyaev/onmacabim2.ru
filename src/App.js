@@ -1,84 +1,21 @@
 import React from 'react';
 import './App.css';
-import WhatsappPopover from "../src/Components/WhatsappPopover";
-import InstaPopoverIrina from "../src/Components/InstaPopoverIrina";
-import InstaPopoverShop from "../src/Components/InstaPopoverShop";
 
-import { AppBar, Container, Toolbar, Typography, Button, IconButton, Box, Paper, Grid, Card, CardMedia, CardContent, CardActions, BottomNavigation, Popover } from '@material-ui/core';
+import { makeStyles, Container, Typography, Grid } from '@material-ui/core';
 
-//import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import TopMenu from '../src/Components/TopMenu';
+import Banner from '../src/Components/Banner';
+import Good4 from '../src/Components/Good4';
+import VideoCardSmall from '../src/Components/VideoCardSmall';
+import Good3 from '../src/Components/Good3';
+import VideoCardLarge from '../src/Components/VideoCardLarge';
+import GoodWide from '../src/Components/GoodWide';
 
-import FolderIcon from '@material-ui/icons/Folder';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-
-import MenuIcon from '@material-ui/icons/Menu';
-import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
-import LayerIcon from '@material-ui/icons/Layers';
-import { makeStyles } from '@material-ui/core/styles';
-
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
-import ThreeDRotation from '@material-ui/icons/ThreeDRotation';
-
-import Icon from '@material-ui/core/Icon';
-import PhoneCallbackIcon from '@material-ui/icons/PhoneCallback';
-
-import Good from '../src/Components/Good';
-import VideoCard from '../src/Components/VideoCard';
-import BlogPost from '../src/Components/BlogPost';
+//import BlogPost from '../src/Components/BlogPost';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(1),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  mainFeaturesPost: {
-    position: "relative",
-    color: theme.palette.common.white,
-    marginBottom: theme.spacing(4),
-    backgroundSize: "cover",
-    backgroundRepeat: "norepeat",
-    backgroundPosition: "center"
-  },
-  overlay: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    backgroundOverlay: "rgba(0,0,0,.3)"
-  },
-  mainFeaturesPostContent: {
-    position: "relative",
-    padding: theme.spacing(6),
-    marginTop: theme.spacing(6),
-    color: theme.palette.common.white,
-    fontWeight: 'bold',
-    fontSize: 50,
-    backgroundColor: 'gray',
-    backgroundColor: "rgba(0, 0, 0, 0.1)"
-  },
-  cardMedia: {
-    //height: 50,
-    //paddingTop: "90.25%"
-  },
-  
-  cardContent: {
-    flexGrow: 1
   },
   cardGrid: {
     marginTop: theme.spacing(4)
@@ -86,18 +23,32 @@ const useStyles = makeStyles((theme) => ({
   typography: {
     padding: theme.spacing(2),
   },
-  contacts: {
-    fontSize: 20,
-    fontWeight: 'bold'
+  footer: {
+    color: 'green'
   }
 }));
 
 const cards = [1, 2, 3];
 
 const img1 = "/images/1.jpeg";
-const img2 = "/images/2.jpeg";
+const img2 = "/images/2.jpg";
 const img3 = "/images/3.jpg";
 const img4 = "/images/4.png";
+const img5 = "/images/5.png";
+const img6 = "/images/6.jpeg";
+const img7 = "/images/7.png";
+const img8 = "/images/8.jpeg";
+const img9 = "/images/9.jpeg";
+
+const title1 = "Солнцезащитный крем SPF-30 с тоном или без";
+const title2 = "Увлажняющий крем SPF-15 для жирной кожи";
+const title5 = "Очищающий гель для жирной кожи";
+const title6 = "Очищающий гель для нормальной и сухой кожи";
+const title7 = "Тонизирующий лосьон для нормальной и сухой кожи";
+const title8 = "Крем Omega 3+6 с подтягивающим эффектом";
+const title9 = "Сыворотка с витамином C";
+const title10 = "Крем - лифтинг с витамином C";
+const title11 = "Восстанавливающий крем вокруг глаз";
 
 function App() {
 
@@ -118,318 +69,57 @@ function App() {
   }
 
   return (<>
-    <AppBar color='' position='fixed'>
-      <Container fixed>
-        <Toolbar>
-          <Typography variant="h4" className={classes.title}>
-          
-            ONmacabim
-          
-          </Typography>
-          <Box>
-            {/*
-            <Button className={classes.menuButton} color="inherit" variant="outlined" onClick={handleClickOpen}>
-              Login
-              </Button>
-              */}
-              
-          
-              <span className={classes.contacts}>Обучение косметологов в Караганде:</span>
-
-              <Button>
-                <InstaPopoverIrina />
-              </Button>
-
-              <Button>
-                <WhatsappPopover />
-              </Button>
-
-              <Button>
-              <PhoneCallbackIcon /> <h3>8-(701)-356-27-76</h3>
-              </Button>
-
-            <Dialog open={open} onClose={handleClose} area-labelledby="form-dialog-title">
-              <DialogTitle id="form-dialog-title">Log in</DialogTitle>
-              <DialogContent>
-                <DialogContentText>Log in to see videos</DialogContentText>
-                <TextField 
-                  autoFocus
-                  margin="dense"
-                  id="name"
-                  label="Email Adress"
-                  type="email"
-                  fullWidth
-                />
-
-                <TextField 
-                  autoFocus
-                  margin="dense"
-                  id="pass"
-                  label="Password"
-                  type="password"
-                  fullWidth
-                />
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose} color="primary">Cancel</Button>
-                <Button onClick={handleClose} color="primary">Log in</Button>
-              </DialogActions>
-            </Dialog>
-          </Box>
-          {/*
-          <Box>
-            <Button className={classes.menuButton} color="inherit" variant="outlined" onClick={handleClickOpen}>Login</Button>
-
-            <Dialog open={open} onClose={handleClose} area-labelledby="form-dialog-title">
-              <DialogTitle id="form-dialog-title">Log in</DialogTitle>
-              <DialogContent>
-                <DialogContentText>Log in to see videos</DialogContentText>
-                <TextField 
-                  autoFocus
-                  margin="dense"
-                  id="name"
-                  label="Email Adress"
-                  type="email"
-                  fullWidth
-                />
-
-                <TextField 
-                  autoFocus
-                  margin="dense"
-                  id="pass"
-                  label="Password"
-                  type="password"
-                  fullWidth
-                />
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose} color="primary">Cancel</Button>
-                <Button onClick={handleClose} color="primary">Log in</Button>
-              </DialogActions>
-            </Dialog>
-          </Box>
-          */}
-          {
-          //<Button className={classes.menuButton} color="secondary" variant="contained">Sign Up</Button>
-          }
-        </Toolbar>
-      </Container>
-    </AppBar>
-
+    <TopMenu />
     <main>
-      <Paper className={classes.mainFeaturesPost}
-        style={{ 
-          backgroundImage: "url('/images/banner.jpeg')"
-        }}>
-        <Container fixed>
-          <div className={classes.overlay} />
-          <Grid container>
-            <Grid item md={6} lg={6}>
-              <div className={classes.mainFeaturesPostContent}>
-                <Typography className={classes.mainFeaturesPostContent}>
-                  Профессиональная космецевтика ONmacabim
-                </Typography>
-
-                {/*
-                <Button className={classes.menuButton} variant="contained" color="default" onClick={handleClickOpen}>
-                  Контакты
-                </Button>
-                
-                  <Dialog open={open} onClose={handleClose} area-labelledby="form-dialog-title">
-                    <DialogTitle id="form-dialog-title">Контакты</DialogTitle>
-                    <DialogContent>
-                      <DialogContentText>Мы в соц сетях:</DialogContentText>
-                    </DialogContent>
-
-
-                    <DialogActions>
-                      <Button onClick={handleClose} color="primary">Закрыть</Button>
-                    </DialogActions>
-                  </Dialog>
-                */}
-              </div>
-            </Grid>
-          </Grid>
-        </Container>
-      </Paper>
-
-
-
-      <div className={classes.mainContent}>
+      <Banner/>
+      <Container className={classes.cardGrid} maxWidth="lg">
+        <Grid container spacing={4}>
+          <Good4 img={img1} title={title11} />
+          <Good4 img={img2} title={title9} />
+          <Good4 img={img3} title={title1} />
+          <Good4 img={img4} title={title2} />
+        </Grid>
+      </Container>
+      <Container className={classes.cardGrid} maxWidth="md">
+        <Grid container spacing={4}>
+          <VideoCardSmall />
+          <VideoCardSmall />
+        </Grid>
+      </Container>
+      <Container className={classes.cardGrid} maxWidth="md">
+        <Grid container spacing={4}>
+          <Good3 img={img5} title={title6} />
+          <Good3 img={img6} title={title5} />
+          <Good3 img={img7} title={title7} />
+        </Grid>
+      </Container>
+      <Container className={classes.cardGrid} maxWidth="lg">
+        <Grid container spacing={6}>
+          <VideoCardLarge />
+          <VideoCardLarge />
+        </Grid>
+      </Container>
+      <Container className={classes.cardGrid} maxWidth="md">
+        <Grid container spacing={2}>
+          <GoodWide img={img8} title={title8} />
+          <GoodWide img={img9} title={title10} />
+        </Grid>
+      </Container>
+      {/*
       <Container className={classes.cardGrid} maxWidth="lg">
       <Grid container spacing={2}>
       <BlogPost/>
       <BlogPost/>
       </Grid>
       </Container>
-
-        <Container maxWidth="md">
-          <Typography
-            variant="h3"
-            align="center"
-            color="textPrimary"
-            gutterBottom>
-            { //Магазин профессиональной космецевтики ONmacabim 
-            }
-          </Typography>
-
-          <Typography
-            variant="h5"
-            align="center"
-            color="textSecondary"
-            paragraph>
-            {/*
-            Вот Вы создали и наполнили профиль своей компании в Инстаграм (или в любой социальной сети, но будем говорить в основном про Instagram).
-            Он весь такой красивый и крутой. Поэтому мы сидим и ждём, когда же потребители сами к нам прибегут, но их всё нет и нет.
-            */}
-            
-          </Typography>
-          {/*
-                    <div className={classes.mainButtons}>
-                      <Grid container spacing={5} justify="center">
-                        <Grid item>
-                          <Button variant="contained" color="secondary">Start Now</Button>
-                        </Grid>
-                        <Grid item>
-                          <Button variant="outlined" color="secondary">Learn more</Button>
-                        </Grid>
-
-                      </Grid>
-                    </div>
-          */}
-        </Container>
-      </div>
-{/*
-      <Container className={classes.cardGrid} maxWidth="md">
-        <Grid container spacing={4}>
-          {cards.map((card) => (
-            <Grid item key={card} xs={12} sm={6} md={4}>
-              <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  image="https://source.unsplash.com/random"
-                  title="Image Title"
-                />
-                <CardContent className={classes.cardContent}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom>
-                    Вот Вы создали
-                  </Typography>
-                  <Typography>
-                    Вот Вы создали. Вот Вы создали. Вот Вы создали.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary">View</Button>
-                  <Button size="small" color="primary">Edit</Button>
-
-                  <LayerIcon />
-                  <PlayCircleFilledIcon />
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
 */}
-            {/*
-      <Container className={classes.cardGrid} maxWidth="md">
-        <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  image="/images/Вероника_Кравченко.png"
-                  title="Image Title"
-                />
-                <CardContent className={classes.cardContent}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom>
-                    Вот Вы создали
-                  </Typography>
-                  <Typography>
-                    Вот Вы создали. Вот Вы создали. Вот Вы создали.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary">View</Button>
-                  <Button size="small" color="primary">Edit</Button>
-
-                  <LayerIcon />
-                  <PlayCircleFilledIcon />
-                </CardActions>
-              </Card>
-            </Grid>
-        </Grid>
-      </Container>
-*/}
-
-    <Container className={classes.cardGrid} maxWidth="lg">
-        <Grid container spacing={4}>
-        <Good img={img1}/>
-        <Good img={img2}/>
-        <Good img={img3}/>
-        <Good img={img4}/>
-        </Grid>
-      </Container>
-      
-      <Container className={classes.cardGrid} maxWidth="md">
-        <Grid container spacing={4}>
-        <VideoCard />
-        <VideoCard />
-        </Grid>
-      </Container>
-
-      <Container className={classes.cardGrid} maxWidth="lg">
-        <Grid container spacing={4}>
-        <Good img={img1}/>
-        <Good img={img2}/>
-        <Good img={img3}/>
-        <Good img={img4}/>
-        </Grid>
-      </Container>
-
     </main>
     <footer>
-      {/*
-      <Typography variant="h5" align="center" gutterBottom>
-        Footer
+      <Typography className={classes.footer} align="center" variant="subtitle1">
+        Профессиональная космецевтика ONmacabim, Караганда 2010 - 2021
       </Typography>
-      <BottomNavigation 
-        value={value} 
-        onChange={handleChange}
-        className={classes.root}>
-            <BottomNavigationAction 
-              label="Recents"
-              value="recents"
-              icon={<RestoreIcon/>}
-            />
-            <BottomNavigationAction 
-              label="Favorites"
-              value="favorites"
-              icon={<FavoriteIcon/>}
-            />
-            <BottomNavigationAction 
-              label="Nearby"
-              value="nearby"
-              icon={<LocationOnIcon/>}
-            />
-            <BottomNavigationAction 
-              label="Folder"
-              value="folder"
-              icon={<FolderIcon/>}
-            />
-      </BottomNavigation>
-      
-      <Typography align="center" color="textSecondary" variant="subtitle1">
-            Парикмахер в Калининграде ReactJS Material UI site
-      </Typography>
-      */}
     </footer>
   </>
-
   );
 }
 

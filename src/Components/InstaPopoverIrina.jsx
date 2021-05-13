@@ -6,10 +6,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import InstagramIcon from '@material-ui/icons/Instagram';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(
+  (theme) => ({
     typography: {
       padding: theme.spacing(2),
     },
+    button: {
+      color: `#f44336`,
+    }
   }));
 
 function InstaPopoverIrina() {
@@ -29,7 +33,7 @@ function InstaPopoverIrina() {
   
     return (
       <div>
-        <Button aria-describedby={id} variant="contained" color="" onClick={handleClick}>
+        <Button className={classes.button} aria-describedby={id} variant="contained" color="#4caf50" onClick={handleClick}>
           <InstagramIcon/>
         </Button>
         <Popover
@@ -48,7 +52,7 @@ function InstaPopoverIrina() {
         >
           <Typography className={classes.typography}>
             <a href="https://instagram.com/zagrebina_cosmetics" title="">
-               Ирина Загребина
+               Написать в инстаграм
             </a>
           </Typography>
         </Popover>

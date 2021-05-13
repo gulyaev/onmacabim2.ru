@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
 import { Typography, Button, Grid, Card, CardMedia, CardContent, CardActions } from '@material-ui/core';
-
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import LayerIcon from '@material-ui/icons/Layers';
 
@@ -31,28 +30,23 @@ const styles = {
   },
   cardMedia: {
     height: '100%',
-    width: 'auto',
-    /*
-    paddingTop: "250",
-    paddingRight: "250",
-    paddingBottom: "250",
-    paddingLeft: "205",
-    */
-    
-    
-    objectFit: 'cover'
+    width: 'auto'
   },
   price: {
     fontSize: 15
+  },
+  cardContent: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: 'green',
   }
 };
 
-function Good(props) {
+function Good4(props) {
   const { classes, children, className, ...other } = props;
 
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
-
       <Card className={clsx(classes.root, className)} {...other}>
         <div className={classes.cardDiv}>
           <CardMedia
@@ -61,34 +55,33 @@ function Good(props) {
             title="Image Title"
           />
         </div>
-
         <CardContent className={classes.cardContent}>
           <Typography
             variant="h7"
             gutterBottom>
-            ONmacabim DM Увлажняющий для жирной кожи SPF 15
-                  </Typography>
+            {props.title}
+          </Typography>
           <Typography className={classes.price}>
-            3 500 тг
-                  </Typography>
+            {/*3 500 тг*/}
+          </Typography>
         </CardContent>
+        {/*
         <CardActions>
-
           <PlayCircleFilledIcon />
           <Button size="small" color="primary">Посмотреть</Button>
           <LayerIcon />
           <Button size="small" color="primary">Купить</Button>
         </CardActions>
+        */}
       </Card>
-
     </Grid>
   );
 }
 
-Good.propTypes = {
+Good4.propTypes = {
   children: PropTypes.node,
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,
 };
 
-export default withStyles(styles)(Good);
+export default withStyles(styles)(Good4);
