@@ -5,12 +5,20 @@ import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 //const redTheme = createMuiTheme({ palette: { primary: red } })
 //const blueTheme = createMuiTheme({ palette: { primary: blue } })
 
+const theme = createMuiTheme({
+    button: {
+      fontSize: '1rem',
+      color: 'green'
+    },
+});
+/*
 const useStyles = makeStyles((theme) => ({
     typography: {
       padding: theme.spacing(2),
@@ -19,9 +27,10 @@ const useStyles = makeStyles((theme) => ({
       color: `#388e3c`,
     }
   }));
-
+*/
 function WhatsappPopover() {
-    const classes = useStyles();
+    //const classes = useStyles();
+    const classes = createMuiTheme;
     const [anchorEl, setAnchorEl] = React.useState(null);
   
     const handleClick = (event) => {

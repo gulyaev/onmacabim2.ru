@@ -11,7 +11,15 @@ const useStyles = makeStyles({
   },
   cardTitle: {
     color: 'green'
-  }
+  },
+  price: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'black'
+  },
+  description: {
+    marginBottom: '20px'
+  },
 });
 
 export default function GoodWide(props) {
@@ -30,9 +38,11 @@ export default function GoodWide(props) {
             <Typography className={classes.cardTitle} gutterBottom variant="h5" component="h2">
               {props.title}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
+            <Typography className={classes.description} variant="body2" color="textSecondary" component="p">
+              {props.description}
+          </Typography>
+          <Typography className={classes.price}>
+            {props.price}
           </Typography>
           </CardContent>
         </CardActionArea>

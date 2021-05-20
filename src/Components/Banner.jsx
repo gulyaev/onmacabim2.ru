@@ -47,10 +47,11 @@ function Banner(props) {
         <Container fixed>
           <div className={classes.overlay} />
           <Grid container>
-            <Grid item md={6} lg={6}>
+            <Grid item xs={12} md={6} lg={6}>
               <div className={classes.mainFeaturesPostContent}>
                 <Typography className={classes.mainFeaturesPostContent}>
-                  Профессиональная космецевтика ONmacabim
+                  {/*Профессиональная */}
+                  космецевтика ONmacabim
                 </Typography>
               </div>
             </Grid>

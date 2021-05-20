@@ -14,7 +14,7 @@ const styles = {
     borderRadius: 5,
     border: 5,
     color: 'black',
-    height: 350,
+    height: 370,
     width: 200,
     padding: '10px 30px',
     boxShadow: '0 3px 5px 2px gray',
@@ -34,7 +34,9 @@ const styles = {
     width: 'auto'
   },
   price: {
-    fontSize: 15
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'black'
   },
   cardContent: {
     fontSize: 15,
@@ -65,7 +67,7 @@ function Good3(props) {
             {props.title}
                   </Typography>
           <Typography className={classes.price}>
-            {/*3 500 тг*/}
+            {props.price}
                   </Typography>
         </CardContent>
 {/*

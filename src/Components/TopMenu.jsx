@@ -33,8 +33,10 @@ export default function TopMenu(props) {
         <Toolbar>
           <Typography variant="h4" className={classes.title}>
             ONmacabim
-        </Typography>
-          <Box>
+          </Typography>
+          
+        </Toolbar>
+        <Box>
             <span className={classes.contacts}>Обучение косметологов в Караганде:</span>
             <Button>
               <InstaPopoverIrina />
@@ -45,9 +47,7 @@ export default function TopMenu(props) {
             <Button className={classes.contacts}>
               <PhoneCallbackIcon /> <span>8-(701)-356-27-76</span>
             </Button>
-            
           </Box>
-        </Toolbar>
       </Container>
     </AppBar>
   );

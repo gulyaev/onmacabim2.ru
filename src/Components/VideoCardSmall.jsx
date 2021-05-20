@@ -44,7 +44,7 @@ function VideoCardSmall (props) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
+debugger;
   return (
     <Grid item xs={12} sm={6} md={4} lg={6}>
 
@@ -62,8 +62,8 @@ function VideoCardSmall (props) {
               {/*<MoreVertIcon />*/}
             </IconButton>
           }
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
+          title={props.title}
+          subheader={props.date}
         />
           
         <CardMedia
@@ -72,11 +72,10 @@ function VideoCardSmall (props) {
           
           //title="Paella dish"
         />
-        <Video className={classes.media}/>
+        <Video className={classes.media} video={props.video}/>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            This impressive paella is a perfect party dish and a fun meal to cook together with your
-            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {props.description}
         </Typography>
         </CardContent>
 {/*
